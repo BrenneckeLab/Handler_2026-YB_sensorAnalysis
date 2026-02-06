@@ -1,0 +1,24 @@
+#preload all aliases
+#set -a to automatically export all functions
+set -a
+
+parallel() { singularity exec ${SINGULARITYdir}APmaster.simg parallel "$@" ; }
+mawk() { singularity exec ${SINGULARITYdir}APmaster.simg mawk "$@" ; }
+samtools() { singularity exec ${SINGULARITYdir}APmaster.simg samtools "$@" ; }
+CUTADAPT() { singularity exec ${SINGULARITYdir}APmaster.simg cutadapt "$@" ; }
+BamIndexDecoder() { singularity exec ${SINGULARITYdir}APmaster.simg java -jar /usr/local/bin/BamIndexDecoder.jar "$@" ; }
+bbduk() { singularity exec ${SINGULARITYdir}APmaster.simg bbduk.sh "$@" ;}
+sraToolkit() { singularity exec ${SINGULARITYdir}APmaster.simg "$@" ; }
+seqkit() { singularity exec ${SINGULARITYdir}APmaster.simg seqkit "$@" ; }
+STAR() { singularity exec ${SINGULARITYdir}APmaster.simg STAR "$@" ; }
+bedtools() { singularity exec ${SINGULARITYdir}APmaster.simg bedtools "$@" ; }
+bowtie() { singularity exec ${SINGULARITYdir}APmaster.simg bowtie "$@" ; }
+bowtieBuild() { singularity exec ${SINGULARITYdir}APmaster.simg bowtie-build "$@" ; }
+salmon() { singularity exec ${SINGULARITYdir}APmaster.simg salmon "$@" ; }
+makeTagDirectory() { singularity exec ${SINGULARITYdir}APmaster.simg makeTagDirectory "$@" ; }
+makeUCSCfile() { singularity exec ${SINGULARITYdir}APmaster.simg makeUCSCfile "$@" ; }
+bedGraphToBigWig() { singularity exec ${SINGULARITYdir}APmaster.simg bedGraphToBigWig "$@" ; }
+Rscript() { singularity exec ${SINGULARITYdir}R.simg Rscript "$@" ; }
+bigBedToBed() { singularity exec ${SINGULARITYdir}APmaster.simg bigBedToBed "$@" ;  }
+twoBitToFa() { singularity exec ${SINGULARITYdir}APmaster.simg twoBitToFa "$@" ;  }
+faCount() { singularity exec ${SINGULARITYdir}APmaster.simg faCount "$@" ;  }
